@@ -1,0 +1,81 @@
+{
+  "theme": "dark",
+  "archetype": "Archetype 4 (Swiss & High-Contrast) adapted for High-End Clinical Noir",
+  "colors": {
+    "background": "#020617",
+    "surface": "#0F172A",
+    "surface_elevated": "#1E293B",
+    "primary": "#2563EB",
+    "primary_hover": "#3B82F6",
+    "secondary": "#E2E8F0",
+    "text_main": "#F8FAFC",
+    "text_muted": "#94A3B8",
+    "border": "#334155",
+    "success": "#16A34A",
+    "error": "#DC2626"
+  },
+  "typography": {
+    "font_family": {
+      "headings": "Manrope, sans-serif",
+      "body": "IBM Plex Sans, sans-serif"
+    },
+    "hierarchy": {
+      "h1": "text-4xl sm:text-5xl font-light tracking-tight text-left",
+      "h2": "text-2xl sm:text-3xl font-medium tracking-tight text-left",
+      "h3": "text-xl sm:text-2xl font-medium text-left",
+      "body": "text-base leading-relaxed text-slate-300 text-left",
+      "label": "text-xs font-semibold tracking-[0.2em] uppercase text-slate-400 text-left"
+    }
+  },
+  "layout": {
+    "strategy": "Asymmetric Bento Grid (Control Room Mode) with generous p-8/p-12 spacing. Left-aligned typography across dense areas.",
+    "border_radius": "rounded-sm",
+    "surface_styles": {
+      "header": "backdrop-blur-xl bg-slate-950/70 border-b border-slate-800 shadow-sm",
+      "cards": "bg-slate-900 border border-slate-800 p-8 shadow-[0_8px_32px_rgba(0,0,0,0.12)] hover:border-blue-500/30 transition-colors"
+    }
+  },
+  "components": {
+    "buttons": "rounded-sm px-6 py-3 font-medium transition-all active:scale-[0.98] bg-blue-600 hover:bg-blue-500 text-white",
+    "inputs": "bg-slate-950 border border-slate-800 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 rounded-sm text-white",
+    "calendar": "Use Shadcn Calendar. Override styles to ensure dark mode matches slate-900 surface. Provide ample padding inside the component.",
+    "time_slots": "Hourly grid 9:00 to 17:00. Use radio-group or toggle-group styled as sharp rectangular buttons.",
+    "toast": "Use Sonner for success and error toast notifications. Ensure high contrast."
+  },
+  "media": {
+    "image_urls": [
+      {
+        "category": "auth_background",
+        "url": "https://images.unsplash.com/photo-1771774982253-adcc7715b8f6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMG1lZGljYWwlMjBiYWNrZ3JvdW5kJTIwZGFya3xlbnwwfHx8fDE3Nzc3OTE0NjF8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Abstract microscopic view for login background texture. Must be heavily overlaid with bg-slate-950/90 to keep it subtle."
+      },
+      {
+        "category": "doctor_avatar_1",
+        "url": "https://images.unsplash.com/photo-1594824476967-48c8b964273f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwxfHxkb2N0b3IlMjBwb3J0cmFpdHxlbnwwfHx8fDE3Nzc3OTE0NjF8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Female doctor portrait"
+      },
+      {
+        "category": "doctor_avatar_2",
+        "url": "https://images.pexels.com/photos/19438566/pexels-photo-19438566.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Male doctor portrait"
+      }
+    ]
+  },
+  "motion": {
+    "page_transitions": "Framer motion, slight fade and translateY(10px) on load",
+    "hover_states": "Cards subtly glow or border brightens to blue-500/50. Interactive states must clearly show a lighter hue for hover."
+  },
+  "testing": {
+    "data_testid_rule": "ALL interactive elements must have kebab-case data-testid (e.g., login-form-submit-button, doctor-select-dropdown, time-slot-button, book-appointment-submit)"
+  },
+  "instructions_to_main_agent": [
+    "Strictly follow the Dark Theme. Do not use generic Inter font. Use Manrope for headings and IBM Plex Sans for body.",
+    "For the dashboard, use the Control Room bento grid layout. Avoid generic center-aligned blocks.",
+    "Implement time slots exactly as hourly boundaries (9:00-10:00, 10:00-11:00... 16:00-17:00).",
+    "Display 'Welcome, {username}' prominently on the dashboard.",
+    "Seed 20-30 doctors with specialties (Cardiologist, Dermatologist, Neurologist, etc.).",
+    "Use Shadcn UI components but heavily customize to remove the 'Vercel' look: use sharp corners (rounded-none or rounded-sm), heavy p-8 padding on cards, and 1px border lines.",
+    "Prevent double-booking on the backend and show toast notifications (success/error) on the frontend using Sonner.",
+    "Ensure the appointment booking form is clearly separated into 'Select Doctor', 'Select Date', and 'Select Time Slot' steps or sections within the bento grid."
+  ]
+}
